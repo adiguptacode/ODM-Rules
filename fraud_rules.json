@@ -1,0 +1,39 @@
+{
+  "source": "watsonx-orchestrate fraud detection ensemble",
+  "total_transactions": 10500,
+  "flagged": 871,
+  "rules": [
+    {
+      "rule_name": "PROPOSED_amount_distance_from_home_hour",
+      "description": "Flag as fraud when amount > 394 AND distance_from_home > 13 AND hour >= 0 AND hour <= 20",
+      "condition": "amount > 394 AND distance_from_home > 13 AND hour >= 0 AND hour <= 20",
+      "action": "flag_fraud",
+      "confidence": 1.0,
+      "support": 260
+    },
+    {
+      "rule_name": "PROPOSED_amount_distance_from_home",
+      "description": "Flag as fraud when amount > 126 AND amount <= 276 AND distance_from_home > 100",
+      "condition": "amount > 126 AND amount <= 276 AND distance_from_home > 100",
+      "action": "flag_fraud",
+      "confidence": 1.0,
+      "support": 88
+    },
+    {
+      "rule_name": "PROPOSED_amount_distance_from_home",
+      "description": "Flag as fraud when amount > 284 AND amount <= 394 AND distance_from_home > 80",
+      "condition": "amount > 284 AND amount <= 394 AND distance_from_home > 80",
+      "action": "flag_fraud",
+      "confidence": 1.0,
+      "support": 55
+    },
+    {
+      "rule_name": "PROPOSED_amount_distance_from_home_hour",
+      "description": "Flag as fraud when amount > 394 AND distance_from_home > 13 AND hour >= 21 AND hour <= 23",
+      "condition": "amount > 394 AND distance_from_home > 13 AND hour >= 21 AND hour <= 23",
+      "action": "flag_fraud",
+      "confidence": 0.9773,
+      "support": 43
+    }
+  ]
+}
