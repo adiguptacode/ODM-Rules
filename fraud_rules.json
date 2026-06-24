@@ -13,17 +13,17 @@
       "support": 212
     },
     {
-      "rule_name": "PROPOSED_amount_distance_prev_km_is_night_proxy",
-      "description": "Flag as fraud when amount <= 19 AND distance_prev_km <= 596 AND is_night == 1 AND proxy == 1",
-      "condition": "amount <= 19 AND distance_prev_km <= 596 AND is_night == 1 AND proxy == 1",
+      "rule_name": "PROPOSED_amount_distance_prev_km_is_night",
+      "description": "Flag as fraud when amount <= 5 AND distance_prev_km <= 596 AND is_night == 1",
+      "condition": "amount <= 5 AND distance_prev_km <= 596 AND is_night == 1",
       "action": "flag_fraud",
       "confidence": 1.0,
       "support": 66
     },
     {
-      "rule_name": "PROPOSED_amount_card_not_present_distance_prev_km_is_night_proxy",
-      "description": "Flag as fraud when amount <= 19 AND card_not_present == 1 AND distance_prev_km <= 596 AND is_night == 1 AND proxy == 0",
-      "condition": "amount <= 19 AND card_not_present == 1 AND distance_prev_km <= 596 AND is_night == 1 AND proxy == 0",
+      "rule_name": "PROPOSED_amount_distance_prev_km_is_night",
+      "description": "Flag as fraud when amount > 6 AND amount <= 19 AND distance_prev_km <= 596 AND is_night == 1",
+      "condition": "amount > 6 AND amount <= 19 AND distance_prev_km <= 596 AND is_night == 1",
       "action": "flag_fraud",
       "confidence": 1.0,
       "support": 65
