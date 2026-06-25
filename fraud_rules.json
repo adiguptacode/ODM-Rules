@@ -1,56 +1,24 @@
 {
-  "source": "watsonx-orchestrate ensemble (retrained on real Confluent data)",
-  "total_transactions": 13963,
-  "flagged": 616,
+  "source": "watsonx-orchestrate ensemble (retrained on live cc_txn schema)",
+  "total_transactions": 23100,
+  "flagged": 788,
   "note": "only rules not already in ODM Decision Center",
   "rules": [
     {
-      "rule_name": "PROPOSED_amount_distance_prev_km_is_night",
-      "description": "Flag as fraud when amount <= 19 AND distance_prev_km <= 20 AND is_night == 0",
-      "condition": "amount <= 19 AND distance_prev_km <= 20 AND is_night == 0",
+      "rule_name": "PROPOSED_amount",
+      "description": "Flag as fraud when amount > 1022",
+      "condition": "amount > 1022",
       "action": "flag_fraud",
       "confidence": 1.0,
-      "support": 212
+      "support": 216
     },
     {
-      "rule_name": "PROPOSED_amount_distance_prev_km_is_night_proxy",
-      "description": "Flag as fraud when amount <= 19 AND distance_prev_km <= 596 AND is_night == 1 AND proxy == 1",
-      "condition": "amount <= 19 AND distance_prev_km <= 596 AND is_night == 1 AND proxy == 1",
+      "rule_name": "PROPOSED_amount_declined_home_distance_km",
+      "description": "Flag as fraud when amount <= 4 AND declined == 1 AND home_distance_km <= 11627",
+      "condition": "amount <= 4 AND declined == 1 AND home_distance_km <= 11627",
       "action": "flag_fraud",
       "confidence": 1.0,
-      "support": 66
-    },
-    {
-      "rule_name": "PROPOSED_amount_card_not_present_distance_prev_km_is_night_proxy",
-      "description": "Flag as fraud when amount <= 19 AND card_not_present == 1 AND distance_prev_km <= 596 AND is_night == 1 AND proxy == 0",
-      "condition": "amount <= 19 AND card_not_present == 1 AND distance_prev_km <= 596 AND is_night == 1 AND proxy == 0",
-      "action": "flag_fraud",
-      "confidence": 1.0,
-      "support": 65
-    },
-    {
-      "rule_name": "PROPOSED_amount_distance_prev_km",
-      "description": "Flag as fraud when amount <= 19 AND distance_prev_km > 2307",
-      "condition": "amount <= 19 AND distance_prev_km > 2307",
-      "action": "flag_fraud",
-      "confidence": 1.0,
-      "support": 52
-    },
-    {
-      "rule_name": "PROPOSED_amount_distance_prev_km_vpn",
-      "description": "Flag as fraud when amount > 104 AND distance_prev_km > 3406 AND vpn == 1",
-      "condition": "amount > 104 AND distance_prev_km > 3406 AND vpn == 1",
-      "action": "flag_fraud",
-      "confidence": 1.0,
-      "support": 25
-    },
-    {
-      "rule_name": "PROPOSED_amount_distance_prev_km",
-      "description": "Flag as fraud when amount > 19 AND amount <= 104 AND distance_prev_km > 3684",
-      "condition": "amount > 19 AND amount <= 104 AND distance_prev_km > 3684",
-      "action": "flag_fraud",
-      "confidence": 1.0,
-      "support": 22
+      "support": 24
     }
   ]
 }
